@@ -13,5 +13,4 @@ describe "New author page", type: :feature do
     expect(page).to have_field('author[last_name]')
     expect(page).to have_field('author[homepage]')
   end
-  
 end
