@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   resources :authors
 
+  get 'edit_author', to: 'authors#edit'
+  post 'edit_author', to: 'authors#update'
+
+  
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   
