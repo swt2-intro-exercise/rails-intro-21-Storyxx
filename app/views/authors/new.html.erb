@@ -16,6 +16,21 @@
         <%= form.text_field :homepage %>
     </p>
    
+    <small>
+        <% if @author.errors.any? %>
+            <div id="error_explanation">
+                <p>
+                    <%= pluralize(@author.errors.count, "error") %> prohibitedthis author from being saved:
+                </p>
+                <ul>
+                    <% @author.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+    </small>
+
     <p>
         <%= form.submit %>
     </p>
