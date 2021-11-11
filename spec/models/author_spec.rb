@@ -13,6 +13,6 @@ describe "Author", type: :model do
         author = Author.new(first_name: "Alan", last_name: "Turing")
         expect(author.first_name).to eq("Alan")
         expect(author.last_name).to eq("Turing")
-        expect(author.homepage).to eq("")
+        expect(author.homepage).to eq(nil)
     end
 end
