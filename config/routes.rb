@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get 'new_author', to: 'authors#new'
+  post 'new_author', to: 'authors#create'
+
+  resources :authors
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
