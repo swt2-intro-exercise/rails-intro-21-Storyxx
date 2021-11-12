@@ -17,6 +17,7 @@
             <td><%= author.homepage %></td>
             <td><%= link_to "more", author_path(author) %></td>
             <td><%= link_to "edit", edit_author_path(author) %></td>
+            <td><%= link_to "delete", author_path(author), method: :delete %></td>
         </tr>
     <% end %>
 </table>
