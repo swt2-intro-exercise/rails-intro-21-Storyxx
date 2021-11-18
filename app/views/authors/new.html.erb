@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_with scope: :author, url: new_author_path, local: true do |form| %>
+    <p>
+        <%= form.label :first_name %><br>
+        <%= form.text_field :first_name %>
+    </p>
+   
+    <p>
+        <%= form.label :last_name %><br>
+        <%= form.text_field :last_name %>
+    </p>
+
+    <p>
+        <%= form.label :homepage %><br>
+        <%= form.text_field :homepage %>
+    </p>
+   
+    <small>
+        <% if @author.errors.any? %>
+            <div id="error_explanation">
+                <p>
+                    <%= pluralize(@author.errors.count, "error") %> prohibitedthis author from being saved:
+                </p>
+                <ul>
+                    <% @author.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+    </small>
+
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

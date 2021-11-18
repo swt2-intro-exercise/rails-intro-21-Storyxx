@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
+  resources :papers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rails routes".
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  
+  
+  get 'new_author', to: 'authors#new'
+  post 'new_author', to: 'authors#create'
+  get 'author_index', to: 'authors#index'
+  resources :authors
+  get 'edit_author', to: 'authors#edit'
+  post 'edit_author', to: 'authors#update'
+
+  resources :papers
+  get 'create_paper', to: 'papers#new'
+  post 'create_paper', to: 'papers#create'
+  get 'paper_index', to: 'papers#index'
+  get 'edit_paper', to: 'papers#edit'
+  post 'edit_paper', to: 'papers#update'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
