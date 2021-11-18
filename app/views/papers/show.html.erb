@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paper.authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <p>
   <strong>Title:</strong>
   <%= @paper.title %>

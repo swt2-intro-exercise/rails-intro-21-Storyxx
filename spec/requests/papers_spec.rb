@@ -38,6 +38,14 @@ RSpec.describe "/papers", type: :request do
       get paper_url(paper)
       expect(response).to be_successful
     end
+
+    it "displays authors" do
+      paper = Paper.create! valid_attributes
+      author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing")
+      paper.authors.append(author)
+      get paper_url(paper)
+      expect(response.parsed_body()).to include('Alan Turing')
+    end
   end
 
   describe "GET /new" do

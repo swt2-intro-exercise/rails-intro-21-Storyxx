@@ -4,7 +4,6 @@ class CreateAuthors < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.text :last_name
       t.string :homepage
-      # t.has_and_belongs_to_many :paper
 
       t.timestamps
     end
